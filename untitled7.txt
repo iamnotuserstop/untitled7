@@ -1,0 +1,48 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace stringconcatenation
+{
+    public class Calculation
+    {
+        public String Concat(String s1, String s2)
+        {
+            return "Hello " + s1 + " " + s2;
+        }
+    }
+}
+
+_________________________________________________________
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using NUnit.Framework;
+namespace stringconcatenation
+{
+    [TestFixture]
+    class Nunit
+    {
+        [Test]
+        public void T1()
+        {
+            String actual;
+            String expected = "Hello a b";
+            Calculation cal = new Calculation();
+            actual = cal.Concat("a", "b");
+            Assert.AreEqual(expected, actual);
+        }
+        [Test]
+        public void T2()
+        {
+            String actual, expected = "Hello a b";
+            Calculation cal = new Calculation();
+            actual = cal.Concat("b", "a");
+            Assert.AreEqual(expected, actual);
+        }
+    }
+}
